@@ -1,0 +1,1 @@
+All Hellow! This text from file - hello.txt
