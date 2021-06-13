@@ -4,8 +4,7 @@
     "scripts": {
         "start": "nodemon app.js",
         "dev": "npm app.js",
-        "server": "nodemon serverApp.js",
-        "file": "nodemon serverFile.js"
+        "server": "nodemon serverApp.js"
     },
     "dependencies": {}
 }
