@@ -11,7 +11,8 @@ app.use(function(request, response, next) {
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
     let data = `${hour}:${minutes}:${seconds} ${request.method} ${request.url} ${request.get('user-agent')}`;
-    console.log(data);;
+    console.log(data);
+    //Здесь с помощью объекта request получаем различную информацию о запросе и добавляем ее в файл server.log, используя модуль fs.
     fs.appendFile('server.log', data + '\n', function() {});
     next();
 });
