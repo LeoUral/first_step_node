@@ -1,26 +1,46 @@
-//* Middleware помогают выполнять некоторые задачи, которые должны быть сделаны до отправки ответа
+//* отправка ответа в Express
 const express = require('express');
-const fs = require('fs');
-
 const app = express();
 
-app.use(function(request, response, next) {
+// app.use(function(require, response) {
+//     //Следует учитывать, что в функцию sendFile необходимо передавать абсолютный путь к файлу,
+//     // именно для этого с помощью __dirname получаем абсолютный путь к текущему проекту
+//     // и затем добавляем к нему путь к файлу в рамках текущего проекта.
+//     response.sendFile(__dirname + '/index.html');
 
-    let now = new Date();
-    let hour = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-    let data = `${hour}:${minutes}:${seconds} ${request.method} ${request.url} ${request.get('user-agent')}`;
-    console.log(data);
-    //Здесь с помощью объекта request получаем различную информацию о запросе и добавляем ее в файл server.log, используя модуль fs.
-    fs.appendFile('server.log', data + '\n', function() {});
-    next();
-});
+// });
+app.use('/home/foo/bar', (request, response) => {
+    // response.sendStatus(404);
+    //* или со своим коментанрием
+    response.status(404).send('Ресурс не найден');
+})
 
-app.get('/', function(request, response) {
-    response.send('Hello');
-});
-app.listen(3000, () => { console.log('Run Server'); });
+
+app.listen(3000, () => { console.log('server run'); });
+
+// //* Middleware помогают выполнять некоторые задачи, которые должны быть сделаны до отправки ответа
+// const express = require('express');
+// const fs = require('fs');
+
+// const app = express();
+
+// app.use(function(request, response, next) {
+
+//     let now = new Date();
+//     let hour = now.getHours();
+//     let minutes = now.getMinutes();
+//     let seconds = now.getSeconds();
+//     let data = `${hour}:${minutes}:${seconds} ${request.method} ${request.url} ${request.get('user-agent')}`;
+//     console.log(data);
+//     //Здесь с помощью объекта request получаем различную информацию о запросе и добавляем ее в файл server.log, используя модуль fs.
+//     fs.appendFile('server.log', data + '\n', function() {});
+//     next();
+// });
+
+// app.get('/', function(request, response) {
+//     response.send('Hello');
+// });
+// app.listen(3000, () => { console.log('Run Server'); });
 
 
 

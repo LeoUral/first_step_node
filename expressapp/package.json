@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "scripts": {
         "start": "nodemon app.js",
-        "dev": "nodemon app.js"
+        "dev": "nodemon app.js",
+        "static": "nodemon staticApp.js"
     },
     "dependencies": {
         "express": "^4.16.4"
