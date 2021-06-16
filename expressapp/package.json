@@ -5,7 +5,9 @@
         "start": "nodemon app.js",
         "dev": "nodemon app.js",
         "static": "nodemon staticApp.js",
-        "data": "nodemon dataApp.js"
+        "data": "nodemon dataApp.js",
+        "route": "nodemon routeApp.js",
+        "post": "nodemon postApp.js"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
