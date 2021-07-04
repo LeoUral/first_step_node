@@ -11,8 +11,9 @@ app.get('/register', urlencodedParser, (request, response) => {
     response.sendFile(__dirname + '/register.html');
 });
 app.post('/register', urlencodedParser, (request, response) => {
-    if (request.body) return response.sendStatus(400);
-    console.log(request.body);;
+    if (!request.body) return response.sendStatus(400);
+
+    console.log(request.body);
     response.send(`${request.body.userName} - ${request.body.userAge}`);
 });
 

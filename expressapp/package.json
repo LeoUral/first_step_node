@@ -8,11 +8,17 @@
         "data": "nodemon dataApp.js",
         "route": "nodemon routeApp.js",
         "post": "nodemon postApp.js",
-        "handle": "nodemon handleApp.js"
+        "handle": "nodemon handleApp.js",
+        "rest": "nodemon appRestApi.js",
+        "test": "mocha *.test.js"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
         "express": "^4.16.4",
         "hbs": "^4.1.2"
+    },
+    "devDependencies": {
+        "mocha": "^9.0.2",
+        "supertest": "^6.1.3"
     }
 }
